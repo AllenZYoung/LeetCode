@@ -1,3 +1,3 @@
 All codes can be accepted.
 
-以题目名称为文件名，“-”后的数字为代码版本编号，同一道题目可能有多个不同的提交版本。
+File name is from the name of question. The number after "-" in file name is for different code edition (since the solutions for a question can be totally distinct). The code comments are mainly in English.

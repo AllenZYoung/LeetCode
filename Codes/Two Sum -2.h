@@ -5,8 +5,9 @@ typedef struct Node
 bool cmp(const Node& n1,const Node& n2)
 {
 	return n1.val < n2.val;
-	//定义的比较函数，按照节点值（也就是输入数组值）从小到大排列
-}
+	//define a compare function, sort the nodes by values from low to high 
+}        
+
 class Solution {
 public:
     vector<int> twoSum(vector<int>& nums, int target) {
