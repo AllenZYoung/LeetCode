@@ -15,11 +15,11 @@ public:
         Node nodes[len];
         for(int i = 0 ; i<len ; i++ )
         {
-        	nodes[i].id = i+1;//不是从0开始，而是从1开始的索引。
+        	nodes[i].id = i+1;//the index starts from "1", not zero
         	nodes[i].val = nums[i];
         }
         sort(nodes,nodes+len,cmp);
-        int ptr1 = 0,ptr2 = len-1;//设置头尾指针
+        int ptr1 = 0,ptr2 = len-1;//set pointer to head and tail
         std::vector<int> ans;
         while(ptr1<ptr2)
         {
@@ -28,13 +28,13 @@ public:
         		if(nodes[ptr1].id>nodes[ptr2].id)
         			swap(nodes[ptr1].id,nodes[ptr2].id);
         		ans.push_back(nodes[ptr1].id);
-        		ans.push_back(nodes[ptr2].id);//将答案放进ans
+        		ans.push_back(nodes[ptr2].id);//push the answers into ans
                 return ans;
         	}
         	else if(nodes[ptr1].val+nodes[ptr2].val < target)
-        		ptr1++;//向后移动头指针
+        		ptr1++;//move head pointer
         	else
-        		ptr2--;//向前移动尾指针
+        		ptr2--;//move end pointer
         }
     }
 };

@@ -11,11 +11,11 @@ public:
     		{
     			if(nums[index] != nums[i])
     			{
-    				nums[++index] = nums[i];//当两个元素不等，向前挪动
+    				nums[++index] = nums[i];//if two elements are not same, move it
     			}
     		}
     		int ans = index + 1;
-    		return ans;//即去重后的数组长度
+    		return ans;//new length of array without duplicates
     	}
 	}
 };

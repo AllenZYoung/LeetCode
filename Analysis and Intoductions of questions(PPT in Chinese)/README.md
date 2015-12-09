@@ -1,0 +1,1 @@
+# Files in this document is about analysis and introductions to the questions, I am preparing a powerpoint presentation to show the thoughts with friends, and I'd like to make the process of working out questions clear. Illustrations and articles are in Chinese.

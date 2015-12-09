@@ -11,10 +11,10 @@ public:
     		{
     			if(nums[index-2] != nums[i])
     			{
-    				nums[index++] = nums[i];//当两个元素不等，向前挪动
+    				nums[index++] = nums[i];//move when two elements are not equal
     			}
     		}
-    		return index;//即去重后的数组长度
+    		return index;//new length of array after "remove" the duplicates
     	}
 	}
 };
