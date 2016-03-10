@@ -1,29 +1,30 @@
 class Solution {
 public:
-    void setZeroes(vector<vector<int>>& matrix) {
-      const size_t m = matrix.size();
-      const size_t n = matrix[0].size();
-      vector<bool> row(m, 0);
-      vector<bool> col(n, 0);
+void setZeroes(vector<vector<int> > &matrix) {
+    int Col0HasZero = 0, Row0HasZero = 0, NumOfRows = matrix.size(), NumOfCols = matrix[0].size();
 
-      for (size_t i = 0; i < m; i++) {
-        for (size_t j = 0; j < n; j++) {
-          if (matrix[i][j] == 0) {
-            row[i] = col[j] = 1;
-          }
-        }
-      }
-
-      for (size_t i = 0; i < m; i++) {
-        if (row[i])
-          fill(&matrix[i][0], &matrix[i][0]+n, 0);
-      }
-      for (size_t j = 0; j < n; j++) {
-        if (col[j]) {
-          for (size_t i = 0; i < m; i++)  {
-            matrix[i][j] = 0;
-          }
-        }
-      }
+    for (int j = 0; j < NumOfCols; j++) {
+      if (matrix[0][j] == 0)
+        Row0HasZero = 1;
     }
+    for (int i = 0; i < NumOfRows; i++) {
+        if (matrix[i][0] == 0) 
+          Col0HasZero = 1;
+        for (int j = 1; j < NumOfCols; j++)
+            if (matrix[i][j] == 0)
+                matrix[i][0] = matrix[0][j] = 0;
+    }
+    for (int i = NumOfRows - 1; i >= 0; i--) {
+        for (int j = NumOfCols - 1; j >= 1; j--)
+            if (matrix[i][0] == 0 || matrix[0][j] == 0)
+                matrix[i][j] = 0;
+        if (Col0HasZero) 
+          matrix[i][0] = 0;
+    }
+    for (int j = 0; j < NumOfCols; j++) {
+      if (Row0HasZero)
+        matrix[0][j] = 0;
+    }
+
+}
 };
